@@ -1,2 +1,3 @@
-# javascript_electronics_book
-Source code for the Javascript Electronics Book
+# JavaScript Arduino Electronics - Book
+
+You will find the source code of my upcoming book in this repository.
