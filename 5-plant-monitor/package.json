@@ -1,0 +1,20 @@
+{
+  "name": "5-plant-monitor",
+  "version": "1.0.0",
+  "description": "Monitor house plant",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webondevices"
+  },
+  "keywords": [
+    "javascript",
+    "arduino",
+    "sensor"
+  ],
+  "author": "Mate Marschalko",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.10.6"
+  }
+}
