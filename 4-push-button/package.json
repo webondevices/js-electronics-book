@@ -1,7 +1,7 @@
 {
-  "name": "2-temperature-sensor",
+  "name": "4-push-button",
   "version": "1.0.0",
-  "description": "Measure temperature",
+  "description": "Detect button press",
   "main": "index.js",
   "repository": {
     "type": "git",
