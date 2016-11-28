@@ -24,26 +24,16 @@ arduino.on('ready', function() {
         freq: 1000
     });
 
-    thermometer.on('data', function(data){
-
-        celsius = data.C;
-        fahrenheit = data.F;
-
-        console.log(celsius + '°C');
-        console.log(fahrenheit + '°F');
+    thermometer.on('data', function(){
+        celsius = this.C;
+        fahrenheit = this.F;
     });
 
-    lightSensor.on('data', function(data){
-        
-        light = data;
-
-        console.log(light);
+    lightSensor.on('data', function(){        
+        light = this.value;
     });
 
-    moistureSensor.on('data', function(data){
-        
-        moisture = data;
-
-        console.log(moisture);
+    moistureSensor.on('data', function(){
+        moisture = this.value;
     });
 });
