@@ -1,11 +1,11 @@
-var five = require("johnny-five");
+var five = require('johnny-five');
 var arduino = new five.Board();
 
-arduino.on("ready", function() {
+arduino.on('ready', function() {
     
     // The Arduino board is ready
 
-    // Access the LED on pin number 10
+    // Access the LED on pin D10
     var led = new five.Led(10);
 
     // Blink the LED every half second

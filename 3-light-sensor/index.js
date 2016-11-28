@@ -1,7 +1,7 @@
-var five = require("johnny-five");
+var five = require('johnny-five');
 var arduino = new five.Board();
 
-arduino.on("ready", function() {
+arduino.on('ready', function() {
     
     // Access the light sensor on pin A0
     var lightSensor = new five.Sensor({

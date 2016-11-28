@@ -1,7 +1,7 @@
-var five = require("johnny-five");
+var five = require('johnny-five');
 var arduino = new five.Board();
 
-arduino.on("ready", function() {
+arduino.on('ready', function() {
     
     // Access the push button on pin D2
     var button = new five.Button(2);
