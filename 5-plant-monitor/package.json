@@ -15,6 +15,8 @@
   "author": "Mate Marschalko",
   "license": "ISC",
   "dependencies": {
-    "johnny-five": "^0.10.6"
+    "johnny-five": "^0.10.6",
+    "twilio": "^2.11.1",
+    "twit": "^2.2.5"
   }
 }
