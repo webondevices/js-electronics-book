@@ -1,0 +1,13 @@
+body {
+	font-family: sans-serif;
+}
+
+.index {
+	background-color: rgba(200,0,0,0.2);
+}
+.about {
+	background-color: rgba(0,200,0,0.2);
+}
+.resources {
+	background-color: rgba(0,0,200,0.2);
+}
