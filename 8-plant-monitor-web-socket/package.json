@@ -1,0 +1,22 @@
+{
+  "name": "6-http-server-module",
+  "version": "1.0.0",
+  "description": "Run HTTP server",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webondevices"
+  },
+  "keywords": [
+    "javascript",
+    "arduino",
+    "server"
+  ],
+  "author": "Mate Marschalko",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "johnny-five": "^0.10.6",
+    "socket.io": "^1.7.2"
+  }
+}

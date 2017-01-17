@@ -1,0 +1,14 @@
+body {
+	font-family: sans-serif;
+	background-color: rgba(200, 0, 0, 0.2);
+}
+
+p {
+	font-size: 24px;
+}
+
+.update {
+	width: 150px;
+	height: 50px;
+	font-size: 18px;
+}
