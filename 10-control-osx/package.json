@@ -1,0 +1,20 @@
+{
+  "name": "10-control-osx",
+  "version": "1.0.0",
+  "description": "Control OSX volume with potmeter",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webondevices"
+  },
+  "keywords": [
+    "javascript",
+    "arduino",
+    "led"
+  ],
+  "author": "Mate Marschalko",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.10.6"
+  }
+}
