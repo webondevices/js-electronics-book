@@ -8,14 +8,14 @@ function updateData(sensorData) {
 	apiData = sensorData;
 }
 
-function start(data){
+function start(data) {
 	
 	// Start listening on port 8080
 	app.listen(8080, function () {
 	    console.log('Express server listening on port 8080');
 	});
 
-	// Respond to web GET requests with index.html page:
+	// Respond to http GET requests with index.html page
 	app.get('/', function (request, response) {
 	    response.sendFile(__dirname + '/public/index.html');
 	});

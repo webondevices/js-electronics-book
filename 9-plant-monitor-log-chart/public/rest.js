@@ -4,8 +4,6 @@ function update(response) {
 
 	for (var i = 0; i < response.data.length; i++) {
 
-		console.log('Loading ' + i + ' of ' + response.data.length);
-
 		var time = new Date(response.data[i].timeStamp);
 		var stamp = time.getTime();
 		
@@ -31,18 +29,9 @@ function initChart() {
 	getData();
 
 	tempChart = Highcharts.chart('temperature', {
-        chart: {
-            type: 'spline'
-        },
-
-        title: {
-            text: 'Temperature'
-        },
-
-        xAxis: {
-        	type: 'datetime'
-        },
-
+        chart: { type: 'spline' },
+        title: { text: 'Temperature' },
+        xAxis: { type: 'datetime' },
         series: [{
             name: 'Celsius',
             data: []
@@ -50,18 +39,9 @@ function initChart() {
     });
 
     lightChart = Highcharts.chart('light', {
-        chart: {
-            type: 'spline'
-        },
-
-        title: {
-            text: 'Light'
-        },
-
-        xAxis: {
-        	type: 'datetime'
-        },
-
+        chart: { type: 'spline' },
+        title: { text: 'Light' },
+        xAxis: { type: 'datetime' },
         series: [{
             name: '%',
             data: []
@@ -69,18 +49,9 @@ function initChart() {
     });
 
     humidChart = Highcharts.chart('humidity', {
-        chart: {
-            type: 'spline'
-        },
-
-        title: {
-            text: 'Humidity'
-        },
-
-        xAxis: {
-        	type: 'datetime'
-        },
-
+        chart: { type: 'spline' },
+        title: { text: 'Humidity' },
+        xAxis: { type: 'datetime' },
         series: [{
             name: '%',
             data: []

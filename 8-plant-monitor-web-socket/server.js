@@ -30,11 +30,11 @@ function start(data) {
 	// Increment client counter if someone connects
 	io.on('connection', function () {
 		numberOfClients++;
-	});
 
-	// Decrement client counter if someone disconnects
-	io.on('disconnect', function () {
-		numberOfClients--;
+		// Decrement client counter if someone disconnects
+		io.on('disconnect', function () {
+			numberOfClients--;
+		});
 	});
 }
 
