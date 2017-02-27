@@ -1,7 +1,7 @@
 {
-  "name": "6-http-server-module",
+  "name": "9-plant-monitor-lo-chart",
   "version": "1.0.0",
-  "description": "Run HTTP server",
+  "description": "Monitor plant and log on chart",
   "main": "index.js",
   "repository": {
     "type": "git",
