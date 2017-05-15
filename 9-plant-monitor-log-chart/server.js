@@ -18,11 +18,11 @@ function updateData(sensorData) {
         sensorData.timestamp = now;
         
         // Save sensor reading in the file
-        fs.readFile('./log.js', 'utf-8', function read(err, data) {
+        fs.readFile('./log.json', 'utf-8', function read(err, data) {
             var log = JSON.parse(data);
             log.entries.push(sensorData);
             
-            fs.writeFile('./log.js', JSON.stringify(log), 'utf8', function (err) {
+            fs.writeFile('./log.json', JSON.stringify(log), 'utf8', function (err) {
                 if (err) return console.log(err);
                 console.log('Logged data: ', now);
             });
@@ -47,7 +47,7 @@ function start(data) {
         response.setHeader('Content-Type', 'application/json');
 
         // Read CSV file
-        fs.readFile('./log.js', 'utf-8', function read(err, data) {
+        fs.readFile('./log.json', 'utf-8', function read(err, data) {
             if (err) return console.log(err);
 
             // Convert to JSON then send
