@@ -2,14 +2,16 @@ var chart;
 
 function update(response) {
 
-	for (var i = 0; i < response.data.length; i++) {
+	for (var i = 0; i < response.entries.length; i++) {
 
-		var time = new Date(response.data[i].timeStamp);
+        var data = response.entries[i];
+
+		var time = new Date(data.timestamp);
 		var stamp = time.getTime();
 		
-		tempChart.series[0].addPoint([stamp, response.data[i].celsius], false, false);
-		lightChart.series[0].addPoint([stamp, response.data[i].light], false, false);
-		humidChart.series[0].addPoint([stamp, response.data[i].moisture], false, false);
+		tempChart.series[0].addPoint([stamp, data.celsius], false, false);
+		lightChart.series[0].addPoint([stamp, data.light], false, false);
+		humidChart.series[0].addPoint([stamp, data.moisture], false, false);
 	}
 
 	tempChart.redraw();
