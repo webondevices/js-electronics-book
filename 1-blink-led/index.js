@@ -14,10 +14,8 @@ arduino.on('ready', function() {
     // Pulsate LED
     // led.pulse();
 
-    // Fade LED in
+    // Fade LED in and wait 3 seconds then fade out
     led.fadeIn();
-
-    // Wait 3 seconds then fade out
     this.wait(3000, function(){
         led.fadeOut();
     });
