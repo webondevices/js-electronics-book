@@ -1,12 +1,16 @@
 var five = require('johnny-five');
 var Twit = require('twit');
+
+// ADD IN YOUR DETAILS HERE
 var T = new Twit({
-    consumer_key: '',
-    consumer_secret: '',
-    access_token: '',
-    access_token_secret: ''
+    consumer_key: '[consumer_key_here]',
+    consumer_secret: '[consumer_secret_here]',
+    access_token: '[access_token_here]',
+    access_token_secret: '[access_token_secret_here]'
 });
-var Twilio = require('twilio')('accounts_id', 'auth_token');
+
+// ADD IN YOUR DETAILS HERE
+var Twilio = require('twilio')('[accounts_id_here]', '[auth_token_here]');
 
 var arduino = new five.Board();
 
@@ -24,15 +28,15 @@ function sendAlert(message, type) {
 
     // Text message
     Twilio.messages.create({
-        to: 'a-verified-phone-number',
-        from: 'your-special-twilio-phone-number',
+        to: '[a-verified-phone-number]',
+        from: '[your-special-twilio-phone-number]',
         body: message
-    
+
     // Handle error messages
     }, function(error) {
         console.log(error === null ? 'SMS sent!' : JSON.stringify(error));
     });
-    
+
 
     // Tweet message
     T.post('statuses/update', {
@@ -53,7 +57,7 @@ function sendAlert(message, type) {
 }
 
 arduino.on('ready', function() {
-    
+
     var thermometer = new five.Thermometer({
         controller: 'LM35',
         pin: 'A0',
@@ -82,7 +86,7 @@ arduino.on('ready', function() {
         }
     });
 
-    lightSensor.on('data', function(){        
+    lightSensor.on('data', function(){
         var now = new Date();
         var currentHour = now.getHours();
 
