@@ -1,4 +1,3 @@
-// Start a simple HTTP server
 var express = require('express');
 var app = express();
 
