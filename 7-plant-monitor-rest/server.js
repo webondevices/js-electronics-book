@@ -1,4 +1,3 @@
-// Start a simple HTTP server
 var express = require('express');
 var app = express();
 
@@ -9,7 +8,7 @@ function updateData(sensorData) {
 }
 
 function start(data) {
-	
+
 	// Start listening on port 8080
 	app.listen(8080, function () {
 	    console.log('Express server listening on port 8080');
@@ -20,6 +19,7 @@ function start(data) {
 	    response.sendFile(__dirname + '/public/index.html');
 	});
 
+	// Respond to the http GET request with data from our server
 	app.get('/plant-data', function (request, response) {
 	    response.setHeader('Content-Type', 'application/json');
     	response.send(JSON.stringify(apiData));
