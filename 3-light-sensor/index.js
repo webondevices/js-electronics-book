@@ -12,6 +12,6 @@ arduino.on('ready', function() {
     // Data event listener with callback function
     // Will capture incoming sensor readings
     lightSensor.on('data', function(){
-        console.log(this.value);
+        console.log(this.value + '%');
     });
 });

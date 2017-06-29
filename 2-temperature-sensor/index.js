@@ -18,5 +18,6 @@ arduino.on('ready', function() {
         console.log(this.C + '°C');
         console.log(this.F + '°F');
         console.log(this.K + '°K');
+        console.log('========');
     });
 });

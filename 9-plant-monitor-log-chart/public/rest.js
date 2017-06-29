@@ -11,12 +11,12 @@ function update(response) {
 		
 		tempChart.series[0].addPoint([stamp, data.celsius], false, false);
 		lightChart.series[0].addPoint([stamp, data.light], false, false);
-		humidChart.series[0].addPoint([stamp, data.moisture], false, false);
+		moistChart.series[0].addPoint([stamp, data.moisture], false, false);
 	}
 
 	tempChart.redraw();
 	lightChart.redraw();
-	humidChart.redraw();
+	moistChart.redraw();
 }
 
 function getData() {
@@ -50,9 +50,9 @@ function initChart() {
         }]
     });
 
-    humidChart = Highcharts.chart('humidity', {
+    moistChart = Highcharts.chart('moisture', {
         chart: { type: 'spline' },
-        title: { text: 'Humidity' },
+        title: { text: 'Moisture' },
         xAxis: { type: 'datetime' },
         series: [{
             name: '%',

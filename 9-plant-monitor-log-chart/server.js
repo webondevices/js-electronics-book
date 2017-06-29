@@ -5,7 +5,7 @@ var fs = require('fs');
 
 // Log settings
 var lastUpdated = new Date();
-var logIntervalMinutes = 1;
+var logIntervalMinutes = 0.1;
 
 function updateData(sensorData) {
     var now = new Date();
@@ -51,7 +51,7 @@ function start(data) {
             if (err) return console.log(err);
 
             // Convert to JSON then send
-            response.send(JSON.parse(data));
+            response.send(data);
         });
     });
 
