@@ -17,11 +17,16 @@ function updateData(sensorData) {
         // Add timestamp property to received sensorData object
         sensorData.timestamp = now;
         
-        // Save sensor reading in the file
+        // Read log file
         fs.readFile('./log.json', 'utf-8', function read(err, data) {
+
+            // Parse content of file to JavaScript object
             var log = JSON.parse(data);
+
+            // Push new data to the array
             log.entries.push(sensorData);
             
+            // Stringify object then save back to log file
             fs.writeFile('./log.json', JSON.stringify(log), 'utf8', function (err) {
                 if (err) return console.log(err);
                 console.log('Logged data: ', now);
@@ -42,15 +47,15 @@ function start(data) {
         response.sendFile(__dirname + '/public/index.html');
     });
 
-    // Return CSV file as JSON
+    // Return log file as JSON
     app.get('/plant-data', function (request, response) {
         response.setHeader('Content-Type', 'application/json');
 
-        // Read CSV file
+        // Read JSON file
         fs.readFile('./log.json', 'utf-8', function read(err, data) {
             if (err) return console.log(err);
 
-            // Convert to JSON then send
+            // Send response
             response.send(data);
         });
     });
