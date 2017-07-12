@@ -1,7 +1,7 @@
 {
-  "name": "7-plant-monitor-rest",
+  "name": "7-smart-plant",
   "version": "1.0.0",
-  "description": "Rest service to montor plant sensors",
+  "description": "Monitor house plant",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,12 +10,13 @@
   "keywords": [
     "javascript",
     "arduino",
-    "server"
+    "sensor"
   ],
   "author": "Mate Marschalko",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0",
-    "johnny-five": "^0.10.6"
+    "johnny-five": "^0.10.6",
+    "twilio": "^2.11.1",
+    "twit": "^2.2.5"
   }
 }

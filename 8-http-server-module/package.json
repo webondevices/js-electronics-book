@@ -1,5 +1,5 @@
 {
-  "name": "6-http-server-module",
+  "name": "8-http-server-module",
   "version": "1.0.0",
   "description": "Run HTTP server",
   "main": "index.js",

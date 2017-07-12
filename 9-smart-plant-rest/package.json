@@ -1,7 +1,7 @@
 {
-  "name": "8-plant-monitor-web-socket",
+  "name": "9-smart-plant-rest",
   "version": "1.0.0",
-  "description": "Run plant monitor on web socket",
+  "description": "RESR API to monitor plant sensors",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "johnny-five": "^0.10.6",
-    "socket.io": "^1.7.2"
+    "johnny-five": "^0.10.6"
   }
 }

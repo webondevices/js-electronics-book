@@ -1,5 +1,5 @@
 {
-  "name": "10-control-osx",
+  "name": "5-control-osx",
   "version": "1.0.0",
   "description": "Control OSX volume with potmeter",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "javascript",
     "arduino",
-    "led"
+    "potmeter"
   ],
   "author": "Mate Marschalko",
   "license": "ISC",

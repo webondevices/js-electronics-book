@@ -1,5 +1,5 @@
 {
-  "name": "11-motion-alarm",
+  "name": "6-motion-alarm",
   "version": "1.0.0",
   "description": "Sound alarm when motion is detected",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "javascript",
     "arduino",
-    "led"
+    "alarm"
   ],
   "author": "Mate Marschalko",
   "license": "ISC",

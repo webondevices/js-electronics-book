@@ -1,7 +1,7 @@
 {
-  "name": "5-plant-monitor",
+  "name": "10-smart-plant-web-socket",
   "version": "1.0.0",
-  "description": "Monitor house plant",
+  "description": "Run plant monitor on web socket",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,13 +10,13 @@
   "keywords": [
     "javascript",
     "arduino",
-    "sensor"
+    "server"
   ],
   "author": "Mate Marschalko",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "johnny-five": "^0.10.6",
-    "twilio": "^2.11.1",
-    "twit": "^2.2.5"
+    "socket.io": "^1.7.2"
   }
 }
