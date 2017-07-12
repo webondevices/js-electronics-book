@@ -1,4 +1,4 @@
-var chart;
+var tempChart, lightChart, humidChart;
 
 function update(response) {
 
@@ -9,16 +9,19 @@ function update(response) {
 		var time = new Date(data.timestamp);
 		var stamp = time.getTime();
 		
+        // Adds points to the charts using the High Charts library
 		tempChart.series[0].addPoint([stamp, data.celsius], false, false);
 		lightChart.series[0].addPoint([stamp, data.light], false, false);
 		moistChart.series[0].addPoint([stamp, data.moisture], false, false);
 	}
 
+    // Redraw the charts each time update is called
 	tempChart.redraw();
 	lightChart.redraw();
 	moistChart.redraw();
 }
 
+// Get the data from the API
 function getData() {
 	$.ajax({
 		url: '/plant-data',
@@ -26,6 +29,7 @@ function getData() {
 	});
 }
 
+// Sets up the charts from the High Charts library
 function initChart() {
 
 	getData();
@@ -62,4 +66,3 @@ function initChart() {
 }
 
 $(initChart);
-

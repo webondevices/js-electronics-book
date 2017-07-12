@@ -1,11 +1,12 @@
 var five = require('johnny-five');
 var arduino = new five.Board();
++// exec command can be dangerous, so be careful how you use it
 var exec = require('child_process').exec;
 
 var volume = 0;
 
 arduino.on('ready', function() {
-    
+
     var potmeter = new five.Sensor('A0');
 
     // When a changing value is received
