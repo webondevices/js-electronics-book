@@ -2,7 +2,7 @@
   "name": "5-control-osx",
   "version": "1.0.0",
   "description": "Control OSX volume with potmeter",
-  "main": "index.js",
+  "main": "volume.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/webondevices"

@@ -2,7 +2,7 @@
   "name": "9-smart-plant-rest",
   "version": "1.0.0",
   "description": "RESR API to monitor plant sensors",
-  "main": "index.js",
+  "main": "smart-plant.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/webondevices"

@@ -2,7 +2,7 @@
   "name": "1-blink-led",
   "version": "1.0.0",
   "description": "Blink LED example",
-  "main": "index.js",
+  "main": "blink.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/webondevices"

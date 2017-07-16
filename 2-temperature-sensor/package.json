@@ -2,7 +2,7 @@
   "name": "2-temperature-sensor",
   "version": "1.0.0",
   "description": "Measure temperature",
-  "main": "index.js",
+  "main": "temperature.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/webondevices"

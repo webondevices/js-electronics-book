@@ -2,7 +2,7 @@
   "name": "12-smart-plant-speak",
   "version": "1.0.0",
   "description": "Monitor plant, log on chart and speak",
-  "main": "index.js",
+  "main": "smart-plant.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/webondevices"
