@@ -2,7 +2,7 @@ var five = require('johnny-five');
 
 var arduino = new five.Board();
 
-arduino.on('ready', function() {
+arduino.on('ready', function () {
 
     // The Arduino board is ready
 
@@ -18,7 +18,7 @@ arduino.on('ready', function() {
     // Fade LED in and wait 3 seconds then fade out
     // led.fadeIn();
 
-    // this.wait(3000, function(){
+    // this.wait(3000, function () {
     //     led.fadeOut();
     // });
 });

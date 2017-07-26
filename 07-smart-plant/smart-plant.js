@@ -34,7 +34,7 @@ function sendAlert(message, type) {
         body: message
 
     // Handle error messages
-    }, function(error) {
+    }, function (error) {
         console.log(error === null ? 'SMS sent!' : JSON.stringify(error));
     });
 
@@ -44,7 +44,7 @@ function sendAlert(message, type) {
         status: message
 
     // Handle error messages
-    }, function(error) {
+    }, function (error) {
         console.log(error === undefined ? 'Tweet sent!' : JSON.stringify(error));
     });
 
@@ -52,12 +52,12 @@ function sendAlert(message, type) {
     sentAlertThisPeriod[type] = true;
 
     // Enable alerts after timeout
-    setTimeout(function(){
+    setTimeout(function () {
         sentAlertThisPeriod[type] = false;
     }, 60 * 60 * 1000);
 }
 
-arduino.on('ready', function() {
+arduino.on('ready', function () {
 
     var thermometer = new five.Thermometer({
         controller: 'LM35',
@@ -75,7 +75,7 @@ arduino.on('ready', function() {
         freq: 1000
     });
 
-    thermometer.on('data', function(){
+    thermometer.on('data', function () {
         celsius = this.C;
 
         console.log(celsius);
@@ -87,7 +87,7 @@ arduino.on('ready', function() {
         }
     });
 
-    lightSensor.on('data', function(){
+    lightSensor.on('data', function () {
         var now = new Date();
         var currentHour = now.getHours();
 
@@ -103,7 +103,7 @@ arduino.on('ready', function() {
         }
     });
 
-    moistureSensor.on('data', function(){
+    moistureSensor.on('data', function () {
         // Convert to percentage
         moisture = (this.value / 1024) * 100;
 

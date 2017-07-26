@@ -6,12 +6,12 @@ var exec = require('child_process').exec;
 
 var volume = 0;
 
-arduino.on('ready', function() {
+arduino.on('ready', function () {
 
     var potmeter = new five.Sensor('A0');
 
     // When a changing value is received
-    potmeter.on('change', function() {
+    potmeter.on('change', function () {
 
         // Map input range to a given scale
         var input = this.scaleTo(0, 10);

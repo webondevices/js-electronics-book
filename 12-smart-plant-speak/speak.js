@@ -16,7 +16,7 @@ function interpret(sensorData) {
     }
 
     if (sensorData.light < 25 && currentHour < 20 && currentHour > 6) {
-        message += 'It\'s too dark in here. Switch on the lights!';
+        message += 'It\'s too dark in here. Switch the lights on!';
     } 
 
     if (sensorData.moisture < 35) {

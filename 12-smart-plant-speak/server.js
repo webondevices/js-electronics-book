@@ -10,7 +10,7 @@ var logIntervalMinutes = 0.1;
 function updateData(sensorData) {
     var now = new Date();
 
-    // If log interval has passed log entry
+    // If log interval has elapsed log entry
     if (now.getTime() - lastUpdated.getTime() > logIntervalMinutes * 60 * 1000) {
         lastUpdated = now;
 

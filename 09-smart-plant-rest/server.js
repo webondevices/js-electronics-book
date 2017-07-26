@@ -1,6 +1,6 @@
 var express = require('express');
-var app = express();
 
+var app = express();
 var apiData = {};
 
 function updateData(sensorData) {
