@@ -13,7 +13,7 @@ function updateData(sensorData) {
 	}
 }
 
-function start(data) {
+function start() {
 
 	// Start listening on port 8080
 	server.listen(8080, function () {
@@ -29,11 +29,11 @@ function start(data) {
 	app.use(express.static(__dirname + '/public'));
 
 	// Increment client counter if someone connects
-	io.on('connection', function () {
+	io.on('connection', function (socket) {
 		numberOfClients++;
 
 		// Decrement client counter if someone disconnects
-		io.on('disconnect', function () {
+		socket.on('disconnect', function () {
 			numberOfClients--;
 		});
 	});
