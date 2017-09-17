@@ -18,7 +18,7 @@ function updateData(sensorData) {
         sensorData.timestamp = now;
         
         // Read log file
-        fs.readFile('./log.json', 'utf-8', function read(err, data) {
+        fs.readFile('./log.json', 'utf-8', function (err, data) {
 
             // Parse content of file to JavaScript object
             var log = JSON.parse(data);
@@ -52,7 +52,7 @@ function start(data) {
         response.setHeader('Content-Type', 'application/json');
 
         // Read JSON file
-        fs.readFile('./log.json', 'utf-8', function read(err, data) {
+        fs.readFile('./log.json', 'utf-8', function (err, data) {
             if (err) return console.log(err);
 
             // Send response

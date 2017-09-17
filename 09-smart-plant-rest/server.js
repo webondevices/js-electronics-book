@@ -7,7 +7,7 @@ function updateData(sensorData) {
 	apiData = sensorData;
 }
 
-function start(data) {
+function start() {
 
 	// Start listening on port 8080
 	app.listen(8080, function () {

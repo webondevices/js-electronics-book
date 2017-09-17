@@ -14,9 +14,9 @@ arduino.on('ready', function () {
     // Will capture incoming sensor readings
     lightSensor.on('data', function () {
 
-        // Convert 0 - 1024 reading to 0 - 100 percentage
+        // Convert 0 - 1023 reading to percentage
         var percentage = parseInt((this.value / 1024) * 100);
 
-        console.log(percentage + '%');
+        console.log('Light: ' + percentage + '%');
     });
 });

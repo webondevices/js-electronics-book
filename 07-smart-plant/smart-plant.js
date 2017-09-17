@@ -35,7 +35,7 @@ function sendAlert(message, type) {
 
     // Handle error messages
     }, function (error) {
-        console.log(error === null ? 'SMS sent!' : JSON.stringify(error));
+        console.log(!error ? 'SMS sent!' : JSON.stringify(error));
     });
 
 
@@ -45,7 +45,7 @@ function sendAlert(message, type) {
 
     // Handle error messages
     }, function (error) {
-        console.log(error === undefined ? 'Tweet sent!' : JSON.stringify(error));
+        console.log(!error ? 'Tweet sent!' : JSON.stringify(error));
     });
 
     // Disable alerts for the sensor type
@@ -78,7 +78,7 @@ arduino.on('ready', function () {
     thermometer.on('data', function () {
         celsius = this.C;
 
-        console.log(celsius);
+        console.log('Temperature: ' + celsius);
 
         // If no alert was sent this hour
         if (!sentAlertThisPeriod.temperature) {
@@ -94,7 +94,7 @@ arduino.on('ready', function () {
         // Convert to percentage
         light = (this.value / 1024) * 100;
 
-        console.log(light);
+        console.log('Light: ' + light);
 
         // If no alert was sent this hour
         // And time is between 6am and 8pm to prevent alerts at night
@@ -107,7 +107,7 @@ arduino.on('ready', function () {
         // Convert to percentage
         moisture = (this.value / 1024) * 100;
 
-        console.log(moisture);
+        console.log('Moisture: ' + moisture);
 
         // If no alert was sent this hour
         if (!sentAlertThisPeriod.moisture) {

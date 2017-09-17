@@ -18,7 +18,7 @@ function updateData(sensorData) {
         sensorData.timestamp = now;
         
         // Read log file
-        fs.readFile('./log.json', 'utf-8', function read(err, data) {
+        fs.readFile('./log.json', 'utf-8', function (err, data) {
 
             // Parse content of file to JavaScript object
             var log = JSON.parse(data);
@@ -35,7 +35,7 @@ function updateData(sensorData) {
     }
 }
 
-function start(data) {
+function start() {
     
     // Start listening on port 8080
     app.listen(8080, function () {
