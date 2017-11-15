@@ -19,8 +19,8 @@ arduino.on('ready', function () {
         // If input is different to previous value
         if (volume !== input) {
             volume = input;
-            console.log('Volume: ', volume);
             exec('osascript -e "set Volume ' + input + '"');
+            console.log('Volume: ', volume);
         }
     });
 });

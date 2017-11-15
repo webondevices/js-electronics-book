@@ -13,19 +13,19 @@ arduino.on('ready', function () {
     // Event listeners with callback functions
     // Will capture button down event
     button.on('down', function () {
-        console.log('button is pressed');
         led.on();
+        console.log('button is pressed');
     });
 
     // Will capture button held down event
     button.on('hold', function () {
-        console.log('button is held down for over half a second');
         led.blink(100);
+        console.log('button is held down for over half a second');
     });
 
     // Will capture button released event
     button.on('up', function () {
-        console.log('button is released');
         led.stop().off();
+        console.log('button is released');
     });
 });
