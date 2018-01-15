@@ -19,7 +19,13 @@ arduino.on('ready', function () {
         // If input is different to previous value
         if (volume !== input) {
             volume = input;
+
+            // Command on OSX
             exec('osascript -e "set Volume ' + input + '"');
+
+            // Command on Windows
+            // exec('nircmd.exe setsysvolume ' + (volume * 6553.5));
+            
             console.log('Volume: ', volume);
         }
     });
