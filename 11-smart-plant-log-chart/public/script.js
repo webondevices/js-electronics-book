@@ -9,7 +9,7 @@ function update(response) {
 		var time = new Date(data.timestamp);
 		var stamp = time.getTime();
 		
-        // Adds points to the charts using the High Charts library
+        // Adds points to the charts using the Highcharts library
 		tempChart.series[0].addPoint([stamp, data.celsius], false, false);
 		lightChart.series[0].addPoint([stamp, data.light], false, false);
 		moistChart.series[0].addPoint([stamp, data.moisture], false, false);

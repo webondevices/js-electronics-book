@@ -10,7 +10,7 @@ var T = new Twit({
 });
 
 // ADD IN YOUR DETAILS HERE
-var Twilio = require('twilio')('[accounts_id_here]', '[auth_token_here]');
+var Twilio = require('twilio')('[account_sid_here]', '[auth_token_here]');
 
 var arduino = new five.Board();
 
