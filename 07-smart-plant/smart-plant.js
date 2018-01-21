@@ -104,8 +104,8 @@ arduino.on('ready', function () {
     });
 
     moistureSensor.on('data', function () {
-        // Convert to percentage
-        moisture = (this.value / 1024) * 100;
+        // Convert to percentage and invert
+        moisture = ((1024 - this.value) / 1024) * 100;
 
         console.log('Moisture: ' + moisture);
 

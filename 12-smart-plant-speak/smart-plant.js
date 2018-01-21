@@ -44,7 +44,7 @@ arduino.on('ready', function () {
     });
 
     moistureSensor.on('data', function () {
-        sensorData.moisture = (this.value / 1024) * 100;
+        sensorData.moisture = ((1024 - this.value) / 1024) * 100;
         server.updateData(sensorData);
         speak.interpret(sensorData);
     });
