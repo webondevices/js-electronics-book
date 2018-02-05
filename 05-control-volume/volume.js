@@ -21,7 +21,7 @@ arduino.on('ready', function () {
             volume = input;
 
             // Command on OSX
-            exec('osascript -e "set Volume ' + input + '"');
+            exec('osascript -e "set Volume ' + volume + '"');
 
             // Command on Windows
             // exec('nircmd.exe setsysvolume ' + (volume * 6553.5));
