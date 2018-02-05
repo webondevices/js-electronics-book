@@ -10,14 +10,14 @@ var logIntervalMinutes = 0.1;
 function updateData(sensorData) {
     var now = new Date();
 
-    // If log interval has elapsed log entry
+    // If log interval has elapsed, log entry
     if (now.getTime() - lastUpdated.getTime() > logIntervalMinutes * 60 * 1000) {
         lastUpdated = now;
 
         // Add timestamp property to received sensorData object
         sensorData.timestamp = now;
         
-        // Read log file
+        // Read existing log file
         fs.readFile('./log.json', 'utf-8', function (err, data) {
 
             // Parse content of file to JavaScript object
