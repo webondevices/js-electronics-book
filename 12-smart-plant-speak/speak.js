@@ -9,7 +9,7 @@ function interpret(sensorData) {
     var currentHour = now.getHours();
     
     if (sensorData.celsius < 18) {
-        message += 'I\'m freezing! It\'s ' + sensorData.celsius + 'degrees in here. Turn on the heating or put me out to the sun?';
+        message += 'I\'m freezing! It\'s ' + sensorData.celsius + 'degrees in here. Turn on the heating or put me out in the sun.';
     
     } else if (sensorData.celsius > 25) {
         message += 'I\'m hot! It\'s ' + sensorData.celsius + 'degrees in here. Open the window or move me away from the sun.';

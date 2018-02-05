@@ -3,14 +3,14 @@ var Twit = require('twit');
 
 // ADD IN YOUR DETAILS HERE
 var T = new Twit({
-    consumer_key: '[consumer_key_here]',
-    consumer_secret: '[consumer_secret_here]',
-    access_token: '[access_token_here]',
-    access_token_secret: '[access_token_secret_here]'
+    consumer_key: 'consumer_key_here',
+    consumer_secret: 'consumer_secret_here',
+    access_token: 'access_token_here',
+    access_token_secret: 'access_token_secret_here'
 });
 
 // ADD IN YOUR DETAILS HERE
-var Twilio = require('twilio')('[account_sid_here]', '[auth_token_here]');
+var Twilio = require('twilio')('account_sid_here', 'auth_token_here');
 
 var arduino = new five.Board();
 
@@ -29,8 +29,8 @@ function sendAlert(message, type) {
     // Text message
     // ADD IN YOUR DETAILS HERE
     Twilio.messages.create({
-        to: '[a-verified-phone-number]',
-        from: '[your-special-twilio-phone-number]',
+        to: 'a-verified-phone-number',
+        from: 'your-special-twilio-phone-number',
         body: message
 
     // Handle error messages

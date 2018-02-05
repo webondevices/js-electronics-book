@@ -22,7 +22,7 @@ function start() {
 	// Respond to the http GET request with data from our server
 	app.get('/plant-data', function (request, response) {
 	    response.setHeader('Content-Type', 'application/json');
-    	response.send(JSON.stringify(apiData));
+    	response.send(apiData);
 	});
 
 	// Define route folder for static requests
