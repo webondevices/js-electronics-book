@@ -1,49 +1,49 @@
-var five = require('johnny-five');
-var server = require('./server');
-var speak = require('./speak');
+const five = require("johnny-five");
+const server = require("./server");
+const speak = require("./speak");
 
-var arduino = new five.Board();
+const arduino = new five.Board();
 
-var sensorData = {
-	celsius: 0,
-	light: 0,
-	moisture: 0
+const sensorData = {
+    celsius: 0,
+    light: 0,
+    moisture: 0
 };
 
 // Start server
 server.start();
 
-arduino.on('ready', function () {
-    
-    var thermometer = new five.Thermometer({
-        controller: 'LM35',
-        pin: 'A0',
+arduino.on("ready", () => {
+
+    const thermometer = new five.Thermometer({
+        controller: "LM35",
+        pin: "A0",
         freq: 1000
     });
 
-    var lightSensor = new five.Sensor({
-        pin: 'A1',
+    const lightSensor = new five.Sensor({
+        pin: "A1",
         freq: 1000
     });
 
-    var moistureSensor = new five.Sensor({
-        pin: 'A2',
+    const moistureSensor = new five.Sensor({
+        pin: "A2",
         freq: 1000
     });
 
-    thermometer.on('data', function () {
+    thermometer.on("data", () => {
         sensorData.celsius = this.C;
         server.updateData(sensorData);
         speak.interpret(sensorData);
     });
 
-    lightSensor.on('data', function () {        
+    lightSensor.on("data", () => {
         sensorData.light = (this.value / 1024) * 100;
         server.updateData(sensorData);
         speak.interpret(sensorData);
     });
 
-    moistureSensor.on('data', function () {
+    moistureSensor.on("data", () => {
         sensorData.moisture = ((1024 - this.value) / 1024) * 100;
         server.updateData(sensorData);
         speak.interpret(sensorData);

@@ -1,5 +1,5 @@
-var i = 0;
+let i = 0;
 
-setInterval(function () {
-    console.log(++i + ' seconds have passed.');
+setInterval(() => {
+    console.log(`${++i} seconds have passed.`);
 }, 1000);

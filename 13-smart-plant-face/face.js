@@ -1,8 +1,8 @@
-var five = require('johnny-five');
-var matrix = null;
+const five = require("johnny-five");
+let matrix = null;
 
-function display (face) {
-    
+function display(face) {
+
     // Check if the matrix is already initialised
     // Initalise if not
     if (matrix === null) {
@@ -13,7 +13,7 @@ function display (face) {
                 cs: 4
             }
         });
-  
+
         // Switch matrix on
         matrix.on();
     }

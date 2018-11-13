@@ -1,18 +1,18 @@
-var five = require('johnny-five');
+const five = require("johnny-five");
 
-var arduino = new five.Board();
+const arduino = new five.Board();
 
-arduino.on('ready', function () {
+arduino.on("ready", () => {
 
     // Setup the components
-    var led = new five.Led(6);
-    var piezo = new five.Piezo(10);
-    var motion = new five.Motion(4);
+    const led = new five.Led(6);
+    const piezo = new five.Piezo(10);
+    const motion = new five.Motion(4);
 
-    var alarmTone = [['C4', 1], ['C3', 1], ['C4', 1], ['C3', 1]];
+    const alarmTone = [["C4", 1], ["C3", 1], ["C4", 1], ["C3", 1]];
 
     // When motion is detected, blink the LED and play the alarm tone
-    motion.on('motionstart', function () {
+    motion.on("motionstart", () => {
         led.blink(250);
 
         piezo.play({
@@ -20,9 +20,9 @@ arduino.on('ready', function () {
             tempo: 50
         });
     });
-  
+
     // Stop the LED flashing when the motion stops
-    motion.on('motionend', function () {
+    motion.on("motionend", () => {
         led.stop().off();
     });
 });

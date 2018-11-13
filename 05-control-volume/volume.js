@@ -1,32 +1,32 @@
-var five = require('johnny-five');
+const five = require("johnny-five");
 
-var arduino = new five.Board();
+const arduino = new five.Board();
 // exec command can be dangerous, so be careful how you use it
-var exec = require('child_process').exec;
+const exec = require('child_process').exec;
 
-var volume = 0;
+let volume = 0;
 
-arduino.on('ready', function () {
+arduino.on("ready", () => {
 
-    var potmeter = new five.Sensor('A0');
+    const potmeter = new five.Sensor("A0");
 
     // When a changing value is received
-    potmeter.on('change', function () {
+    potmeter.on("change", () => {
 
         // Map input range to a given scale
-        var input = this.scaleTo(0, 10);
+        const input = this.scaleTo(0, 10);
 
         // If input is different to previous value
         if (volume !== input) {
             volume = input;
 
             // Command on OSX
-            exec('osascript -e "set Volume ' + volume + '"');
+            exec(`osascript -e "set Volume ${volume}"`);
 
             // Command on Windows
-            // exec('nircmd.exe setsysvolume ' + (volume * 6553.5));
-            
-            console.log('Volume: ', volume);
+            // exec(`nircmd.exe setsysvolume ${volume * 6553.5}`);
+
+            console.log(`Volume: ${volume}`);
         }
     });
 });

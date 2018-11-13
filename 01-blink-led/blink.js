@@ -1,13 +1,13 @@
-var five = require('johnny-five');
+const five = require("johnny-five");
 
-var arduino = new five.Board();
+const arduino = new five.Board();
 
-arduino.on('ready', function () {
+arduino.on("ready", () => {
 
     // The Arduino board is ready
 
     // Access the LED on pin D6
-    var led = new five.Led(6);
+    const led = new five.Led(6);
 
     // Blink the LED every half second
     led.blink(500);
@@ -18,7 +18,7 @@ arduino.on('ready', function () {
     // Fade LED in and wait 3 seconds then fade out
     // led.fadeIn();
 
-    // this.wait(3000, function () {
+    // this.wait(3000, () => {
     //     led.fadeOut();
     // });
 });
