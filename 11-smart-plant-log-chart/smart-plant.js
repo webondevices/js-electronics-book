@@ -12,7 +12,7 @@ const sensorData = {
 // Start server
 server.start();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     // Setup the thermometer
     const thermometer = new five.Thermometer({
@@ -34,17 +34,17 @@ arduino.on("ready", () => {
     });
 
     // When data is received, update the front end with information from the sensors
-    thermometer.on("data", () => {
-        sensorData.celsius = this.C;
+    thermometer.on("data", function () {
+        sensorData.celsius = this.celsius;
         server.updateData(sensorData);
     });
 
-    lightSensor.on("data", () => {
+    lightSensor.on("change", function () {
         sensorData.light = (this.value / 1024) * 100;
         server.updateData(sensorData);
     });
 
-    moistureSensor.on("data", () => {
+    moistureSensor.on("change", function () {
         sensorData.moisture = ((1024 - this.value) / 1024) * 100;
         server.updateData(sensorData);
     });

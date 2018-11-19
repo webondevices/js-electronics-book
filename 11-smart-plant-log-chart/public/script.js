@@ -30,9 +30,6 @@ function getData() {
 
 // Sets up the charts from the High Charts library
 function initChart() {
-
-    getData();
-
     tempChart = Highcharts.chart("temperature", {
         chart: { type: "spline" },
         title: { text: "Temperature" },
@@ -62,6 +59,9 @@ function initChart() {
             data: []
         }]
     });
+
+    getData();
+    setInterval(getData, 5000);
 }
 
 $(initChart);

@@ -2,7 +2,7 @@ const five = require("johnny-five");
 
 const arduino = new five.Board();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     // Access the temperature sensor on pin A0
     const thermometer = new five.Thermometer({
@@ -13,12 +13,12 @@ arduino.on("ready", () => {
 
     // Data event listener with callback function
     // Will capture incoming sensor readings
-    thermometer.on("data", () => {
+    thermometer.on("data", function () {
 
         // Callback has readings in celsius, fahrenheit and kelvin
-        console.log(this.C + "°C");
-        console.log(this.F + "°F");
-        console.log(this.K + "°K");
+        console.log(this.celsius + "°C");
+        console.log(this.fahrenheit + "°F");
+        console.log(this.kelvin + "°K");
         console.log("========");
     });
 });

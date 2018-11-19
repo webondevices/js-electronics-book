@@ -2,7 +2,7 @@ const five = require("johnny-five");
 
 const arduino = new five.Board();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     // Access the push button on pin D2
     const button = new five.Button(2);
@@ -12,19 +12,19 @@ arduino.on("ready", () => {
 
     // Event listeners with callback functions
     // Will capture button down event
-    button.on("down", () => {
+    button.on("down", function () {
         led.on();
         console.log("button is pressed");
     });
 
     // Will capture button held down event
-    button.on("hold", () => {
+    button.on("hold", function () {
         led.blink(100);
         console.log("button is held down for over half a second");
     });
 
     // Will capture button released event
-    button.on("up", () => {
+    button.on("up", function () {
         led.stop().off();
         console.log("button is released");
     });

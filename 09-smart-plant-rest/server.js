@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const apiData = {};
+let apiData = {};
 
 function updateData(sensorData) {
 	apiData = sensorData;

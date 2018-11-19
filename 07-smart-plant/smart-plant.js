@@ -57,7 +57,7 @@ function sendAlert(message, type) {
     }, 60 * 60 * 1000);
 }
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     const thermometer = new five.Thermometer({
         controller: "LM35",
@@ -75,8 +75,8 @@ arduino.on("ready", () => {
         freq: 1000
     });
 
-    thermometer.on("data", () => {
-        celsius = this.C;
+    thermometer.on("data", function () {
+        celsius = this.celsius;
 
         console.log(`Temperature: ${celsius}`);
 
@@ -87,7 +87,7 @@ arduino.on("ready", () => {
         }
     });
 
-    lightSensor.on("data", () => {
+    lightSensor.on("change", function () {
         const now = new Date();
         const currentHour = now.getHours();
 
@@ -103,7 +103,7 @@ arduino.on("ready", () => {
         }
     });
 
-    moistureSensor.on("data", () => {
+    moistureSensor.on("change", function () {
         // Convert to percentage and invert
         moisture = ((1024 - this.value) / 1024) * 100;
 

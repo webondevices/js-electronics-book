@@ -13,7 +13,7 @@ const sensorData = {
 // Start server
 server.start();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     const thermometer = new five.Thermometer({
         controller: "LM35",
@@ -31,19 +31,19 @@ arduino.on("ready", () => {
         freq: 1000
     });
 
-    thermometer.on("data", () => {
-        sensorData.celsius = this.C;
+    thermometer.on("data", function () {
+        sensorData.celsius = this.celsius;
         server.updateData(sensorData);
         speak.interpret(sensorData);
     });
 
-    lightSensor.on("data", () => {
+    lightSensor.on("change", function () {
         sensorData.light = (this.value / 1024) * 100;
         server.updateData(sensorData);
         speak.interpret(sensorData);
     });
 
-    moistureSensor.on("data", () => {
+    moistureSensor.on("change", function () {
         sensorData.moisture = ((1024 - this.value) / 1024) * 100;
         server.updateData(sensorData);
         speak.interpret(sensorData);

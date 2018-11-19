@@ -16,6 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "johnny-five": "^0.10.6"
+    "johnny-five": "^1.0.0"
   }
 }

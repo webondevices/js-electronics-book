@@ -2,7 +2,7 @@ const five = require("johnny-five");
 
 const arduino = new five.Board();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     // Access the light sensor on pin A0
     const lightSensor = new five.Sensor({
@@ -12,7 +12,7 @@ arduino.on("ready", () => {
 
     // Data event listener with callback function
     // Will capture incoming sensor readings
-    lightSensor.on("data", () => {
+    lightSensor.on("change", function () {
 
         // Convert 0 - 1023 reading to percentage
         const percentage = parseInt((this.value / 1024) * 100);

@@ -2,7 +2,7 @@ const five = require("johnny-five");
 
 const arduino = new five.Board();
 
-arduino.on("ready", () => {
+arduino.on("ready", function () {
 
     // The Arduino board is ready
 
