@@ -2,7 +2,7 @@ const five = require("johnny-five");
 
 const arduino = new five.Board();
 // exec command can be dangerous, so be careful how you use it
-const exec = require('child_process').exec;
+const exec = require("child_process").exec;
 
 let volume = 0;
 

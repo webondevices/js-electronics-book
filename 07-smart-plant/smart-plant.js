@@ -82,8 +82,8 @@ arduino.on("ready", function () {
 
         // If no alert was sent this hour
         if (!sentAlertThisPeriod.temperature) {
-            if (celsius > 25) sendAlert(`It's really hot in here: ${celsius}°C`, 'temperature');
-            if (celsius < 15) sendAlert(`It's freezing cold in here: ${celsius}°C`, 'temperature');
+            if (celsius > 25) sendAlert(`It's really hot in here: ${celsius}°C`, "temperature");
+            if (celsius < 15) sendAlert(`It's freezing cold in here: ${celsius}°C`, "temperature");
         }
     });
 
@@ -99,7 +99,7 @@ arduino.on("ready", function () {
         // If no alert was sent this hour
         // And time is between 6am and 8pm to prevent alerts at night
         if (!sentAlertThisPeriod.light && currentHour < 20 && currentHour > 6) {
-            if (light < 40) sendAlert(`It's way too dark in here: ${light}%`, 'light');
+            if (light < 40) sendAlert(`It's way too dark in here: ${light}%`, "light");
         }
     });
 
@@ -111,7 +111,7 @@ arduino.on("ready", function () {
 
         // If no alert was sent this hour
         if (!sentAlertThisPeriod.moisture) {
-            if (moisture < 25) sendAlert(`Water me please! My soil is really dry: ${moisture}%`, 'moisture');
+            if (moisture < 25) sendAlert(`Water me please! My soil is really dry: ${moisture}%`, "Moisture");
         }
     });
 });

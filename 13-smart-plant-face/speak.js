@@ -1,6 +1,6 @@
 const say = require("say");
-const faces = require('./face-definitions');
-const face = require('./face');
+const faces = require("./face-definitions");
+const face = require("./face");
 
 const interval = 1;
 let lastSpoken = new Date();
